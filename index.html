@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Penahbisan Pendeta - Vic. Putu Edo Bestuana, S.Si.Teol</title>
+
+    <!-- Fonts: Cinzel, Playfair Display, Great Vibes, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF8E1',
+                            300: '#FFE082',
+                            400: '#FFD54F',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#855812',
+                        },
+                        darkbg: '#0A0A0A',
+                        cardbg: '#141414'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Gold Gradients */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF0B2 0%, #D4AF37 50%, #855812 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #FFE58F 0%, #D4AF37 50%, #996515 100%);
+        }
+
+        .border-gold-gradient {
+            border-image: linear-gradient(to bottom right, #FFE58F, #D4AF37, #855812) 1;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* SVG Batik Side Pattern Background */
+        .batik-border-left {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.18' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3Cpath d='M10 10l5-5 5 5-5 5zM30 30l5-5 5 5-5 5z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Golden Sparkle Particles */
+        #canvas-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #33260c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-black overflow-x-hidden">
+
+    <canvas id="canvas-particles"></canvas>
+
+    <!-- Floating Audio Control Widget -->
+    <div id="audio-control" class="fixed bottom-6 right-6 z-50 transition-all duration-300">
+        <button id="toggle-audio-btn" onclick="toggleAudio()" class="w-12 h-12 rounded-full bg-gold-gradient text-black flex items-center justify-center shadow-lg hover:scale-110 transition-transform focus:outline-none border border-yellow-200">
+            <i id="audio-icon" class="fa-solid fa-music text-lg"></i>
+        </button>
+    </div>
+
+    <section id="cover-screen" class="min-h-screen relative flex items-center justify-center p-4 md:p-8 overflow-hidden z-30 transition-all duration-700 bg-[#070707]">
+        <!-- Batik Pattern Border Left & Right -->
+        <div class="absolute left-0 top-0 bottom-0 w-8 md:w-16 batik-border-left border-r border-gold-600/30"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-8 md:w-16 batik-border-left border-l border-gold-600/30"></div>
+
+        <!-- Corner Ornaments (Top Right & Bottom Left) -->
+        <div class="absolute top-4 right-10 md:right-20 text-gold-500/40 pointer-events-none">
+            <svg class="w-20 h-20 md:w-32 md:h-32" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M0,0 Q50,0 50,50 Q50,0 100,0 Q100,50 50,50 Q100,50 100,100 Q50,100 50,50 Q50,100 0,100 Q0,50 50,50 Q0,50 0,0 Z"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-xl w-full mx-auto text-center relative z-10 my-auto py-10 px-4 bg-black/60 backdrop-blur-sm border border-gold-500/30 rounded-2xl gold-glow">
+            <!-- Contoh Gambar Logo GKJ di Tengah -->
+<div style="width: 100%; text-align: center; margin: 20px 0;">
+    <img src="logo GKJ.png" 
+         alt="Logo GKJ Salatiga Selatan" 
+         style="display: block; margin: 0 auto; width: 100%; max-width: 100px; height: auto;">
+</div>
+
+            <p class="font-cinzel text-xs md:text-sm tracking-[0.25em] text-gold-400 uppercase mb-1">Gereja Kristen Jawa</p>
+            <h2 class="font-cinzel text-lg md:text-xl font-bold tracking-widest text-white mb-6">SALATIGA SELATAN</h2>
+
+            <!-- Divider Ornamen Emas -->
+            <div class="flex items-center justify-center gap-3 my-4 text-gold-500">
+                <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <i class="fa-solid fa-crown text-xs"></i>
+                <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-gold-500"></div>
+            </div>
+
+            <h1 class="font-playfair text-2xl md:text-4xl font-bold text-white mb-2">UNDANGAN</h1>
+            <p class="font-playfair italic text-gold-300 text-sm md:text-base mb-6">Ibadah Penahbisan Pendeta ke-3</p>
+
+            <div class="my-6 p-4 rounded-xl border border-gold-500/20 bg-gold-500/5">
+                <p class="font-sans text-xs text-gray-400 uppercase tracking-widest mb-1">Atas Diri:</p>
+                <h3 class="font-script text-3xl md:text-4xl text-gold-400 my-2">Vic. Putu Edo Bestuana, S.Si.Teol</h3>
+            </div>
+
+            <p class="text-xs text-gray-400 mb-6 italic">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+
+            <!-- Open Button -->
+            <button onclick="openInvitation()" class="group relative inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gold-gradient text-black font-cinzel font-bold text-sm tracking-wider uppercase shadow-lg hover:shadow-gold-500/40 transition-all duration-300 hover:scale-105 active:scale-95">
+                <i class="fa-solid fa-envelope-open text-base group-hover:rotate-12 transition-transform"></i>
+                <span>Buka Undangan</span>
+            </button>
+        </div>
+
+        <!-- Wayang Bottom Right Decoration -->
+        <div class="absolute bottom-2 right-2 md:bottom-6 md:right-8 opacity-40 pointer-events-none hidden sm:block">
+            <svg class="w-24 h-36 md:w-36 md:h-52 text-gold-500" viewBox="0 0 100 150" fill="currentColor">
+                <!-- Golden Wayang Outline Silhouette -->
+                <path d="M50 10 C60 20 70 15 65 30 C60 40 80 45 75 60 C70 75 85 80 70 100 C60 115 50 140 50 150 C50 140 40 115 30 100 C15 80 30 75 25 60 C20 45 40 40 35 30 C30 15 40 20 50 10 Z"/>
+            </svg>
+        </div>
+    </section>
+
+    <main id="main-content" class="hidden relative z-10">
+        
+        <!-- Sticky Navigation Header -->
+        <header class="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gold-500/20 px-4 py-3">
+            <div class="max-w-4xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-church text-gold-500"></i>
+                    <span class="font-cinzel text-xs md:text-sm font-bold text-gold-400">GKJ Salatiga Selatan</span>
+                </div>
+                <nav class="hidden md:flex gap-6 text-xs font-cinzel tracking-wider text-gray-300">
+                    <a href="#mempelai" class="hover:text-gold-400 transition-colors">Pendeta</a>
+                    <a href="#acara" class="hover:text-gold-400 transition-colors">Waktu & Tempat</a>
+                    <a href="#susunan" class="hover:text-gold-400 transition-colors">Susunan Acara</a>
+                    <a href="#lokasi" class="hover:text-gold-400 transition-colors">Lokasi</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- SECTION 1: Pendeta Profile & Photo -->
+        <section id="mempelai" class="py-16 px-4 max-w-4xl mx-auto text-center relative">
+            <!-- Decorative Gold Lines -->
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <div class="h-[1px] w-16 md:w-32 bg-gradient-to-r from-transparent to-gold-500"></div>
+                <span class="font-cinzel text-gold-400 text-sm tracking-widest uppercase">Penahbisan Pendeta</span>
+                <div class="h-[1px] w-16 md:w-32 bg-gradient-to-l from-transparent to-gold-500"></div>
+            </div>
+
+            <p class="font-playfair italic text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                "Dengan penuh rasa syukur kepada Tuhan Yesus Kristus sang Juru Selamat Kita, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri Ibadah Penahbisan<br>Pendeta ke-3 GKJ Salatiga Selatan."
+            </p>
+
+            <!-- Photo Frame cutout design -->
+            <div class="relative w-56 h-72 md:w-64 md:h-80 mx-auto mb-8 rounded-t-full border-2 border-gold-500/60 p-2 bg-gradient-to-b from-gold-500/20 to-black shadow-2xl group">
+                <div class="w-full h-full rounded-t-full overflow-hidden relative bg-neutral-900 flex items-center justify-center border border-gold-400/40">
+                    <!-- Photo Placeholder / Customized Portrait -->
+                    <img src="fot Vic.png" 
+                         alt="Vic. Putu Edo Bestuana, S.Si.Teol" 
+                         class="w-full h-full object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x500/1a1a1a/D4AF37?text=Vic.+Putu+Edo+Bestuana';">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                </div>
+                
+                <!-- Gold Wayang Frame Badge -->
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-black border border-gold-500 px-4 py-1 rounded-full text-gold-400 font-cinzel text-xs tracking-wider whitespace-nowrap shadow-md">
+		</div>	
+            </div>
+
+            <h2 class="font-script text-4xl md:text-5xl text-gold-400 mb-2">Vic. Putu Edo Bestuana, S.Si.Teol</h2>
+
+            <!-- Scripture / Ayat Alkitab Motif -->
+            <div class="mt-12 p-6 md:p-8 rounded-2xl bg-cardbg border border-gold-500/30 max-w-2xl mx-auto relative overflow-hidden">
+                <i class="fa-solid fa-quote-left text-3xl text-gold-500/20 absolute top-4 left-4"></i>
+                <p class="font-playfair italic text-sm md:text-base text-gray-300 relative z-10 leading-relaxed">
+                    "Bukan kamu yang memilih Aku, melainkan Akulah yang memilih kamu. Dan Aku telah menetapkan kamu, supaya kamu pergi dan menghasilkan buah dan buahmu itu tetap."
+                </p>
+                <p class="font-cinzel text-xs text-gold-400 mt-3 font-semibold">— Yohanes 15:16a —</p>
+            </div>
+        </section>
+
+        <section id="acara" class="py-16 px-4 bg-gradient-to-b from-darkbg via-cardbg to-darkbg border-y border-gold-500/20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-gold-400 mb-2">Waktu & Tempat</h2>
+                <p class="text-xs text-gray-400 tracking-widest uppercase mb-10">Ibadah Penahbisan</p>
+
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <!-- Date Card -->
+                    <div class="p-6 rounded-2xl bg-black/60 border border-gold-500/30 hover:border-gold-500 transition-colors">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        <h3 class="font-cinzel text-sm text-gold-400 uppercase tracking-wider mb-2">Hari & Tanggal</h3>
+                        <p class="font-playfair text-lg text-white font-bold">Sabtu</p>
+                        <p class="text-gray-300 text-sm">31 Oktober 2026</p>
+                    </div>
+
+                    <!-- Time Card -->
+                    <div class="p-6 rounded-2xl bg-black/60 border border-gold-500/30 hover:border-gold-500 transition-colors">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <h3 class="font-cinzel text-sm text-gold-400 uppercase tracking-wider mb-2">Waktu</h3>
+                        <p class="font-playfair text-lg text-white font-bold">09.00 - 12.00 WIB</p>
+                        <p class="text-gray-300 text-xs mt-1"></p>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="p-6 rounded-2xl bg-black/60 border border-gold-500/30 hover:border-gold-500 transition-colors">
+                        <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-cinzel text-sm text-gold-400 uppercase tracking-wider mb-2">Tempat</h3>
+                        <p class="font-playfair text-lg text-white font-bold">GKJ Salatiga Selatan</p>
+                        <p class="text-gray-300 text-xs mt-1">Salatiga, Jawa Tengah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="susunan" class="py-16 px-4 max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-gold-400 mb-2">Susunan Acara</h2>
+                <div class="h-0.5 w-20 bg-gold-500 mx-auto mb-2"></div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest">Rundown Kegiatan Penahbisan</p>
+            </div>
+
+            <!-- Rundown Table Container -->
+            <div class="overflow-hidden rounded-2xl border border-gold-500/30 bg-cardbg/80 backdrop-blur-sm shadow-xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-300">
+                        <thead class="bg-gold-500/15 text-gold-400 font-cinzel text-xs uppercase border-b border-gold-500/30">
+                            <tr>
+                                <th scope="col" class="py-4 px-4 md:px-6 w-1/3">Waktu (WIB)</th>
+                                <th scope="col" class="py-4 px-4 md:px-6">Agenda Acara</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gold-500/10 font-sans">
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">08.00 – 09.00</td>
+                                <td class="py-3.5 px-4 md:px-6 font-medium">Registrasi Jemaat & Undangan</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors bg-gold-500/5">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-400 whitespace-nowrap">09.00 – 10.30</td>
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-white">IBADAH DAN PROSESI PENAHBISAN</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">10.30 – 10.35</td>
+                                <td class="py-3.5 px-4 md:px-6">Pembukaan Acara Non-Ibadah</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">10.35 – 10.45</td>
+                                <td class="py-3.5 px-4 md:px-6">Tari Gambyong Sambutan Jawa</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">10.45 – 10.54</td>
+                                <td class="py-3.5 px-4 md:px-6">Menyanyikan Indonesia Raya, Mars & Hymne GKJ</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">10.54 – 10.59</td>
+                                <td class="py-3.5 px-4 md:px-6">Laporan Ketua Panitia Penahbisan</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">10.59 – 11.10</td>
+                                <td class="py-3.5 px-4 md:px-6">Penampilan Paduan Suara / PPSM</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.10 – 11.15</td>
+                                <td class="py-3.5 px-4 md:px-6">Sambutan Ketua Majelis GKJ Salatiga Selatan</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.15 – 11.20</td>
+                                <td class="py-3.5 px-4 md:px-6">Sambutan BAPELSIN GKJ</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.20 – 11.35</td>
+                                <td class="py-3.5 px-4 md:px-6">Pujian dari Keluarga Sdr. Putu Edo Bestuana</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.35 – 11.40</td>
+                                <td class="py-3.5 px-4 md:px-6">Sambutan Walikota Salatiga</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.40 – 11.45</td>
+                                <td class="py-3.5 px-4 md:px-6">Doa Berkat & Penutup</td>
+                            </tr>
+                            <tr class="hover:bg-gold-500/5 transition-colors">
+                                <td class="py-3.5 px-4 md:px-6 font-semibold text-gold-300 whitespace-nowrap">11.45 – Selesai</td>
+                                <td class="py-3.5 px-4 md:px-6 font-medium text-gold-400">Ramah Tamah & Makan Siang Bersama</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Important Note Box (Sesuai Referensi) -->
+            <div class="mt-6 p-5 rounded-xl border border-gold-500/40 bg-gold-500/10 flex items-start gap-3">
+                <i class="fa-solid fa-circle-info text-gold-400 text-lg mt-0.5"></i>
+                <div class="text-xs md:text-sm text-gray-300 leading-relaxed">
+                    <p class="font-bold text-gold-400 mb-1">Catatan :</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-300">
+                        <li>Pendeta dimohon mengenakan **Toga** dan **Stola berwarna Merah**.</li>
+                        <li>Serta hadir **30 menit** sebelum ibadah dimulai untuk briefing prosesi penahbisan.</li>
+                        <li>Persembahan 1x.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="lokasi" class="py-16 px-4 bg-black border-t border-gold-500/20 text-center">
+            <div class="max-w-xl mx-auto">
+                <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-gold-400 mb-2">Lokasi & Peta Petunjuk</h2>
+                <p class="text-xs text-gray-400 uppercase tracking-widest mb-8">Pindai QR Code / Klik Tombol Peta</p>
+
+                <!-- QR Code Box (Matching Image 10 Reference style) -->
+                <div class="p-6 rounded-2xl bg-cardbg border-2 border-gold-500/50 inline-block shadow-2xl relative mb-6">
+             
+                            <!-- QR pattern -->
+                            <img src="QR.png" alt="QR" tyle="width: 100%; max-width: 300pxorder-radius: 6px;">
+                    </div>
+
+                    <p class="font-cinzel text-xs text-gold-300 tracking-wider mt-4">GKJ Salatiga Selatan</p>
+                </div>
+
+                <div class="mt-2">
+                    <a href="https://maps.app.goo.gl/xVXdvbjbVdKVyK4r7" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-black font-cinzel text-xs tracking-widest font-bold transition-all">
+                        <i class="fa-solid fa-map-location-dot text-sm"></i>
+                        <span>Buka Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 bg-[#050505] border-t border-gold-500/10 text-center text-xs text-gray-500 font-sans">
+            <p>© 2026 GKJ Salatiga Selatan. All Rights Reserved.</p>
+            <p class="mt-1 text-gold-500/40 font-cinzel">Penahbisan Pendeta ke-3</p>
+        </footer>
+    </main>
+
+<!-- PEMUTAR MP3 TANPA KONTROL -->
+<audio id="bg-music" loop autoplay preload="auto">    
+<source src="umami.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const music = document.getElementById('bg-music');
+    if (music) {
+        music.volume = 0.5; // Atur volume (50%)
+    }
+
+    // Fungsi pemutar musik
+    function playAudioOnFirstInteraction() {
+        if (music && music.paused) {
+            music.play().then(() => {
+                // Setelah musik berhasil berputar, hapus event listener agar tidak berjalan berulang
+                document.removeEventListener('click', playAudioOnFirstInteraction);
+                document.removeEventListener('touchstart', playAudioOnFirstInteraction);
+                document.removeEventListener('scroll', playAudioOnFirstInteraction);
+            }).catch(err => console.log("Autoplay masih ditahan browser:", err));
+        }
+    }
+
+    // Dengarkan sentuhan, klik, atau scroll pertama pengguna di mana saja pada layar
+    document.addEventListener('click', playAudioOnFirstInteraction);
+    document.addEventListener('touchstart', playAudioOnFirstInteraction);
+    document.addEventListener('scroll', playAudioOnFirstInteraction);
+
+    /* Open Invitation Handler */
+    function openInvitation() {
+        const cover = document.getElementById('cover-screen');
+        const main = document.getElementById('main-content');
+
+        cover.classList.add('opacity-0', '-translate-y-full');
+        
+        setTimeout(() => {
+            cover.style.display = 'none';
+            main.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Pastikan lagu tetap jalan jika sebelumnya belum sempat terputar
+            playAudioOnFirstInteraction();
+        }, 600);
+    }
+
+    /* Golden Sparkles Canvas Particles Effect tetap ditaruh di bawahnya... */
+</script>
