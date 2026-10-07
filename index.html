@@ -268,6 +268,30 @@
             </div>
         </section>
 
+		<!-- COUNTDOWN TIMER SECTION -->
+<div class="my-8 text-center">
+    <p class="font-cinzel text-xs text-gold-400 tracking-widest uppercase mb-4">- Menuju Hari Penahbisan -</p>
+    
+    <div id="countdown" class="flex justify-center items-center gap-3 md:gap-6">
+        <div class="bg-black/60 border border-gold-500/40 p-3 md:p-4 rounded-xl min-w-[70px] md:min-w-[85px] gold-glow">
+            <span id="days" class="font-playfair text-2xl md:text-3xl font-bold text-gold-400 block">00</span>
+            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Hari</span>
+        </div>
+        <div class="bg-black/60 border border-gold-500/40 p-3 md:p-4 rounded-xl min-w-[70px] md:min-w-[85px] gold-glow">
+            <span id="hours" class="font-playfair text-2xl md:text-3xl font-bold text-gold-400 block">00</span>
+            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Jam</span>
+        </div>
+        <div class="bg-black/60 border border-gold-500/40 p-3 md:p-4 rounded-xl min-w-[70px] md:min-w-[85px] gold-glow">
+            <span id="minutes" class="font-playfair text-2xl md:text-3xl font-bold text-gold-400 block">00</span>
+            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Menit</span>
+        </div>
+        <div class="bg-black/60 border border-gold-500/40 p-3 md:p-4 rounded-xl min-w-[70px] md:min-w-[85px] gold-glow">
+            <span id="seconds" class="font-playfair text-2xl md:text-3xl font-bold text-gold-400 block">00</span>
+            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Detik</span>
+        </div>
+    </div>
+</div>
+		
         <section id="susunan" class="py-16 px-4 max-w-4xl mx-auto">
             <div class="text-center mb-10">
                 <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-gold-400 mb-2">Susunan Acara</h2>
@@ -435,4 +459,32 @@
     }
 
     /* Golden Sparkles Canvas Particles Effect tetap ditaruh di bawahnya... */
+	// Target tanggal acara: Sabtu, 31 Oktober 2026 jam 09:00 WIB
+const eventDate = new Date("October 31, 2026 09:00:00").getTime();
+
+const updateCountdown = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    // Perhitungan waktu
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Tampilkan ke elemen HTML (tambahkan angka 0 di depan jika < 10)
+    if (document.getElementById("days")) {
+        document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+    }
+
+    // Jika waktu sudah lewat
+    if (distance < 0) {
+        clearInterval(updateCountdown);
+        document.getElementById("countdown").innerHTML = 
+            `<p class="font-cinzel text-gold-400 font-bold text-lg">Acara Sedang / Telah Berlangsung</p>`;
+    }
+}, 1000);
 </script>
